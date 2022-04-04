@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script src="javascript/main.js"></script>
+    <title>HTML</title>
+</head>
+<body>
+    <section class="layout">
+        <div class="header">
+            <fieldset>
+            <h1 id="forms">HTML</h1>
+            <a href="#formularios">Formularios HTML</a>
+            <a href="#graficos">Gráficos HTML</a>
+            <a href="#media">HTML Media</a>
+        </fieldset>
+        </div>
+
+        <div class="main">
+            <fieldset>
+                <legend>FORMS</legend>
+            <h1 id="formularios">HTML Forms</h1>
+            <a href="#rc">Radio button y Checkbox</a>
+            <a href="#select">Elemento select</a>
+            <a href="#text">Textarea</a>
+            <a href="#output">Elemento Output</a>
+            <a href="#selectcolor">Selector Color</a>
+            <a href="#tel">Subir archivo</a>
+            <a href="#time">Imput time</a>
+            <br><br>
+            <form action="index.html">
+                <label for="fname">Nombre:</label><br>
+                <input type="text" id="fname" name="fname" value="Nathalia"><br>
+                <label for="lname">Apellido:</label><br>
+                <input type="text" id="lname" name="lname" value="Gonzalez"><br>
+                <label for="birthday">Birthday:</label><br>
+                <input type="date" id="birthday" name="birthday"><br><br>
+                <input type="submit" value="Enviar">
+                <input type="reset">
+            
+            </form> 
+
+            <p>Si hace clic en el botón "Enviar", los datos del formulario se enviarán a una página llamada /index.html".</p>
+            
+            
+            <table style="width:100%">
+                <tr>
+                    <td >
+                        <h2 id="rc">Radio Buttons</h2>
+
+                        <p>Elija su Lenguaje web favorito:</p>
+
+                        <form>
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label for="html">HTML</label><br>
+                            <input type="radio" id="css" name="fav_language" value="CSS">
+                            <label for="css">CSS</label><br>
+                            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                            <label for="javascript">JavaScript</label>
+                        </form>
+                    </td>
+                    <td>
+            
+                        <h2>Checkboxes</h2>
+                        <p>El <strong>input type="checkbox"</strong> define una casilla de verificación:</p>
+
+                        <form action="index.html">
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        <label for="vehicle1"> Tengo una Bicicleta</label><br>
+                        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                        <label for="vehicle2"> Tengo un auto</label><br>
+                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                        <label for="vehicle3"> Tengo un barco</label><br><br>
+                        <input type="submit" value="Enviar">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+                
+            <table style="width:100%">
+                <tr>
+                    <td >
+                        <h2 id="select">El elemento select</h2>
+                        <p>El elemento select define una lista desplegable</p>
+
+                        <form action="index.html">
+                            <label for="cars">Elija un coche:</label>
+                            <select id="cars" name="cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="fiat">Fiat</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            <input type="submit" value="Enviar">
+                        </form>
+                    </td>
+                    <td>
+                        <h2>Valores visibles</h2>
+
+                        <p>Utilice el atributo para especificar el número de valores visibles.</p>
+                        
+                        <form action="index.html">
+                            <label for="cars">Elija un coche:</label>
+                            <select id="cars" name="cars" size="3">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="fiat">Fiat</option>
+                            <option value="audi">Audi</option>
+                            </select><br><br>
+                            <input type="submit" value="Enviar">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        
+            <h2 id="text">Textarea</h2>
+            <p>El elemento textarea define un campo de entrada de varias lineas.</p>
+
+            <form action="/action_page.php">
+            <textarea name="message" rows="10" cols="100%">El elemento TEXTAREA representa un campo de texto de múltiples líneas. Los atributos posibles son:
+            COLS. El número de columnas visibles del área de texto, en caracteres.
+            NAME. Nombre del campo.
+            ROWS. El número de líneas visibles del área de texto, en caracteres.</textarea>
+            <br><br>
+            <input type="submit">
+            </form>
+
+            <h2>El elemento button </h2>
+            <button type="button" onclick="alert('Hola Mundito!')">Click!</button>
+            
+            <h2 id="output">El elemento output</h2>
+            <p>El elemento de salida representa el resultado de un cálculo.</p>
+
+            <form action="index.html"
+                oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                0
+                <input type="range" id="a" name="a" value="50">
+                100 +
+                <input type="number" id="b" name="b" value="50">
+                =
+                <output name="x" for="a b"></output>
+                <br><br>
+                <input type="submit">
+            </form>
+            <h2 id="selectcolor">Mostrar un selector de color</h2>
+
+            <p>El<strong>input type="color"</strong> se usa para campos de entrada que deben contener un color.</p>
+
+            <form >
+                <label for="favcolor">Selecciona tu color favorito:</label>
+                <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+            </form>
+
+            <h2 id="tel">Subir archivo</h2>
+
+            <p>Mostrar un campo de selección de archivos que permite elegir un archivo para cargar:</p>
+            <form action="/action_page.php">
+                <label for="myfile">Seleccione archivo:</label>
+                <input type="file" id="myfile" name="myfile"><br><br>
+            </form>
+
+            <h2>Campo Telefónico</h2>
+
+            <p>El <strong>input type="tel"</strong> se usa para campos de entrada que deben contener un número de teléfono:</p>
+
+            <form action="/action_page.php">
+                <label for="phone">Ingresa un número de teléfono::</label><br><br>
+                <input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>
+                <small>Formato: 123-45-678</small><br><br>
+            </form>
+            <h2 id="time">Mostrar un control de entrada de tiempo</h2>
+
+            <p>El <strong>input type="time"</strong> permite al usuario seleccionar una hora (sin zona horaria):</p>
+
+            <form action="/action_page.php">
+                <label for="appt">Select una hora:</label>
+                <input type="time" id="appt" name="appt" required>
+            </form>
+            <br>
+            <a href="#forms">Volver al inicio</a>
+        </fieldset>
+        </div>
+        <div class="Graficos">
+            <fieldset>
+                <legend>GRÁFICOS</legend>
+            <h1 id="graficos">Gráficos HTML</h1>
+            <a href="#canvas">CANVAS</a>
+            <a href="#dibujos">Dibujos</a>
+            <a href="#svg">SVG</a>
+            <h2 id="canvas">¿Qué es HTML Canvas?</h2>
+            <p>
+                El elemento HTML se utiliza para dibujar gráficos, sobre la marcha, a través de JavaScript. "canvas" <br>
+
+                El elemento es sólo un contenedor para gráficos. Debe usar JavaScript para dibujar realmente los gráficos."canvas" <br>
+                
+                Canvas tiene varios métodos para dibujar trazados, cuadros, círculos, texto y agregar imágenes.
+            </p>
+
+            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+            </canvas>
+            <h2 id="dibujos">Agregar un JavaScript</h2>
+
+            <p>Después de crear el área de lienzo rectangular, debe agregar un JavaScript para realizar el dibujo.</p>
+            <p>Estos son algunos ejemplos:</p>
+
+            <canvas id="ejemplo1" width="200" height="100" style="border:1px solid #000000;">
+            </canvas>
+                
+            <script>
+                var c = document.getElementById("ejemplo1");
+                var ctx = c.getContext("2d");
+                ctx.moveTo(0,0);
+                ctx.lineTo(200,100);
+                ctx.stroke();
+            </script>
+
+            <canvas id="ejemplo2" width="200" height="100" style="border:1px solid #050505;">
+            </canvas>
+                
+            <script>
+                var c = document.getElementById("ejemplo2");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(95,50,40,0,2*Math.PI);
+                ctx.stroke();
+            </script> 
+            <br>
+
+            <canvas id="ejemplo3" width="200" height="100" style="border:1px solid #000000;">
+            </canvas>
+                
+            <script>
+                var c = document.getElementById("ejemplo3");
+                var ctx = c.getContext("2d");
+                ctx.font = "30px Arial";
+                ctx.fillText("Hola Mundo!",10,50);
+            </script>
+
+            <canvas id="ejemplo4" width="200" height="100" style="border:1px solid #000000;">
+            </canvas>
+                
+            <script>
+                var c = document.getElementById("ejemplo4");
+                var ctx = c.getContext("2d");
+                ctx.font = "30px Arial";
+                ctx.strokeText("Hola Mundo!",10,50);
+            </script>
+            <br>
+
+            <canvas id="ejemplo5" width="200" height="100" style="border:1px solid #000000;">
+            </canvas>
+                
+            <script>
+                var c = document.getElementById("ejemplo5");
+                var ctx = c.getContext("2d");
+                // Create gradient
+                var grd = ctx.createLinearGradient(0,0,200,0);
+                grd.addColorStop(0,"red");
+                grd.addColorStop(1,"white");
+                // Fill with gradient
+                ctx.fillStyle = grd;
+                ctx.fillRect(10,10,150,80);
+            </script>
+
+            <canvas id="ejemplo6" width="200" height="100" style="border:1px solid #000000;">
+            </canvas>
+                
+            <script>
+                var c = document.getElementById("ejemplo6");
+                var ctx = c.getContext("2d");
+                
+                // Create gradient
+                var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+                grd.addColorStop(0,"red");
+                grd.addColorStop(1,"white");
+                
+                // Fill with gradient
+                ctx.fillStyle = grd;
+                ctx.fillRect(10,10,150,80);
+            </script>
+
+            <h2 id="svg">Gráficos HTML SVG</h2>
+            <p>El elemento HTML es un contenedor para gráficos SVG. "svg" <br>
+                SVG tiene varios métodos para dibujar trazados, cuadros, círculos, texto e imágenes gráficas.
+            </p>
+            <svg width="150" height="100">
+                <circle cx="50" cy="50" r="40"
+                stroke="purple" stroke-width="4" fill="red" />
+            </svg>
+
+            <svg width="250" height="100">
+                <rect width="200" height="100" style="fill:rgb(245, 0, 0);stroke-width:10;stroke:purple" />
+            </svg>
+            
+            <svg width="250" height="180">
+                <rect x="20" y="20" rx="20" ry="20" width="150" height="150"
+                style="fill:red;stroke:purple;stroke-width:5;opacity:0.5" />
+            </svg>
+
+            <svg width="200" height="200">
+                <polygon points="100,10 40,198 190,78 10,78 160,198"
+                style="fill:rgb(255, 0, 0);stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+            
+            </svg>
+
+            <svg height="130" width="500">
+                <defs>
+                  <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="0%">
+                    <stop offset="100%" style="stop-color:purple;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:rgb(255, 0, 0);stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+                <text fill="#ffffff" font-size="35" font-family="Arial" x="50" y="86">NRGD</text>
+                
+            </svg>
+            <br><br>
+            <a href="#forms">Volver al inicio</a>
+        </fieldset>
+        </div>
+        <div class="Medios">
+            <fieldset>
+                <legend>MEDIA</legend>
+            <h1 id="media">HTML Media</h1>
+            <a href="#video">VIDEO</a>
+            <a href="#audio">AUDIO</a>
+            <a href="#com">COMPLEMENTOS</a>
+            <a href="#youtube">VIDEO YOUTUBE</a>
+        
+        <h2 id="video">Vídeo HTML</h2>
+            <p>El elemento HTML se utiliza para mostrar un vídeo en una página web.(video)(/video)</p>
+            
+            <button onclick="playPause()">Reproducir/Pausar</button> 
+            <button onclick="makeBig()">Grande</button>
+            <button onclick="makeSmall()">Chico</button>
+            <button onclick="makeNormal()">Normal</button>
+            <br><br>
+            <video id="video1" width="400" controls>
+                <source src="media/a.mp4" type="video/mp4">
+            </video>
+            <h2 id="audio">Audio HTML</h2>
+            <p>Para reproducir un archivo de audio en HTML, utilice el elemento:(audio)(/audio)</p>
+            
+            <audio controls autoplay>
+                <source src="media/b.wav" type="audio/mpeg">
+            </audio>
+            <h2 id="com">Complementos HTML</h2>
+            <p>Los plug-ins son programas informáticos que amplían la funcionalidad estándar del navegador.</p>
+
+            <h2>El elemento objeto</h2>
+            <object style="width: 50%; height: 250px;" data="media/a.mp4"></object>
+            <h2 id="youtube">Videos HTML de YouTube</h2>
+            <p>La forma más fácil de reproducir videos en HTML es usar YouTube.</p>
+            <iframe width="600" height="345" src="https://www.youtube.com/embed/wGzdiNAMbTI?controls=0">
+            </iframe>
+            <br><br>
+            <a href="#forms">Volver al inicio</a>
+        </fieldset>
+        </div>
+    </section>
+    
+</body>
+</html>
