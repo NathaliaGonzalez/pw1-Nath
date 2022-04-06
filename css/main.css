@@ -52,4 +52,18 @@ a{
 h1 {
     color: rgb(15, 15, 15);
     text-align: center;
-  }
+}
+.geolocalizacion{ grid-area: auto;
+  background-color: skyblue;
+  padding: 15pt;
+  background-image: url("../media/abc.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.drag{ grid-area: auto;
+  background-color: skyblue;
+  padding: 15pt;
+  background-image: url("../media/abc.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -360,6 +360,55 @@
             <a href="#forms">Volver al inicio</a>
         </fieldset>
         </div>
+        
+        <div class="geolocalizacion" id="geolocalizacion">
+            <h1>API de geolocalización HTML</h1>
+            <p>Haga clic en el botón para obtener sus coordenadas.</p>
+            <button onclick="getLocation()">Intentelo</button>
+            <p id="demo"></p>
+
+            <script src="https://maps.google.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU"></script>
+        </div>
+                
+        <div class="drag" id="drag">
+            <h1>HTML Drag and Drop API</h1>
+            <style>
+            #div1, #div2 {
+                float: left;
+                width: 100px;
+                height: 35px;
+                margin: 10px;
+                padding: 10px;
+                border: 1px solid black;
+              }
+              </style>
+              <script>
+              function allowDrop(ev) {
+                ev.preventDefault();
+              }
+              
+              function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+              }
+              
+              function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+              }
+              </script>
+              </head>
+              <body>
+              
+              <h2>Drag and Drop</h2>
+              <p>Arrastre la imagen de un lado a otro entre los dos elementos div.</p>
+              
+              <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img src="media/img_w3slogo.gif" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+              </div>
+              
+              <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
     </section>
     
 </body>
