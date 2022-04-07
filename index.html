@@ -16,6 +16,8 @@
             <a href="#formularios">Formularios HTML</a>
             <a href="#graficos">Gráficos HTML</a>
             <a href="#media">HTML Media</a>
+            <a href="#geolocalizacion">HTML Geolocalizacion</a>
+            <a href="#drag">HTML Drag/Drop</a>
         </fieldset>
         </div>
 
@@ -366,50 +368,213 @@
             <p>Haga clic en el botón para obtener sus coordenadas.</p>
             <button onclick="getLocation()">Intentelo</button>
             <p id="demo"></p>
-
-            <script src="https://maps.google.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU"></script>
+            <br>
+            <a href="#forms">Volver al inicio</a>
         </div>
                 
         <div class="drag" id="drag">
-            <h1>HTML Drag and Drop API</h1>
-            <style>
-            #div1, #div2 {
-                float: left;
-                width: 100px;
-                height: 35px;
-                margin: 10px;
-                padding: 10px;
-                border: 1px solid black;
-              }
-              </style>
-              <script>
-              function allowDrop(ev) {
-                ev.preventDefault();
-              }
-              
-              function drag(ev) {
-                ev.dataTransfer.setData("text", ev.target.id);
-              }
-              
-              function drop(ev) {
-                ev.preventDefault();
-                var data = ev.dataTransfer.getData("text");
-                ev.target.appendChild(document.getElementById(data));
-              }
-              </script>
-              </head>
-              <body>
-              
-              <h2>Drag and Drop</h2>
-              <p>Arrastre la imagen de un lado a otro entre los dos elementos div.</p>
-              
-              <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <img src="media/img_w3slogo.gif" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
-              </div>
-              
-              <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <table align="center">
+                <tr>
+                <td>
+            <div>
+                <h2>Drag and Drop</h2>
+                <p>Arrastre la imagen de un lado a otro entre los dos elementos div.</p>
+                
+                <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="media/img_w3slogo.gif" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+                </div>
+                <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <script>
+                    function allowDrop(ev) {
+                        ev.preventDefault();
+                    }
+                    
+                    function drag(ev) {
+                        ev.dataTransfer.setData("text", ev.target.id);
+                    }
+                    
+                    function drop(ev) {
+                        ev.preventDefault();
+                        var data = ev.dataTransfer.getData("text");
+                        ev.target.appendChild(document.getElementById(data));
+                    }
+                    </script>
+            </div></tr></td>
+            <tr><td><h1>ARRASTRAR Y SOLTAR</h1>
+            <p class="pp">Drag the English phrase over to the matching Spanish phrase</p>
+            <p class="pp">Arrastra la frase en inglés hasta la frase en español correspondiente</p>
+            <div class="container">
+                <div>
+                    <ul class="draggable-list">
+                        <li id="e1" draggable="true">What's your name?</li>
+                        <li id="e2" draggable="true">Nice to meet you</li>
+                        <li id="e3" draggable="true">I'm sorry</li>
+                        <li id="e4" draggable="true">What do you do in your free time?</li>
+                        <li id="e5" draggable="true">Is something wrong?</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="draggable-list">
+                        <li id="s2" draggable="true">Mucho gusto</li>
+                        <li id="s5" draggable="true">¿Pasa algo?</li>
+                        <li id="s1" draggable="true">¿Cómo te llamas? </li>
+                        <li id="s3" draggable="true">Lo siento</li>
+                        <li id="s4" draggable="true">¿Qué haces en tu tiempo libre?</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="endMessage">
+                <h3>Well done!</h3>
+                <h3>¡Bien hecho!</h3>
+                <table class="mitabla">
+                    <tr>
+                    <th>English</th>
+                    <th>Spanish</th>
+                    </tr>
+                    <tr>
+                    <td>What’s your name?</td>
+                    <td>¿Cómo te llamas?</td>
+                    </tr>
+                    <tr>
+                    <td>Nice to meet you</td>
+                    <td>Mucho gusto</td>
+                    </tr>
+                    <tr>
+                    <td>I'm sorry</td>
+                    <td>Lo siento</td>
+                    </tr>
+                    <tr>
+                    <td>What do you do in your free time?</td>
+                    <td>¿Qué haces en tu tiempo libre?</td>
+                    </tr>
+                    <tr>
+                    <td>Is something wrong?</td>
+                    <td>¿Pasa algo?</td>
+                    </tr>
+                </table>
+                <button onclick="playAgain()" class="botoncito">Play Again</button>
 
+                <script>
+                    const draggableListItems = document.querySelectorAll('.draggable-list li');
+                    const endMessage = document.getElementById('endMessage');
+
+                    // current phrase being dragged
+                    let selectedId;
+
+                    // target phrase
+                    let dropTargetId;
+
+                    // counter for correct phrases
+                    let matchingCounter = 0;
+
+                    addEventListeners();
+
+                    function dragStart() {
+                    selectedId = this.id;
+                    }
+
+                    function dragEnter() {
+                    this.classList.add('over');
+                    }
+
+                    function dragLeave() {
+                    this.classList.remove('over');
+                    }
+
+                    function dragOver(ev) {
+                    ev.preventDefault();
+                    }
+
+                    function dragDrop() {
+                    dropTargetId = this.id;
+
+                    if (checkForMatch(selectedId, dropTargetId)) {
+                        document.getElementById(selectedId).style.display = 'none';
+                        document.getElementById(dropTargetId).style.display = 'none';
+                        matchingCounter++;
+                    } else if (checkForMatch2(selectedId, dropTargetId)) {
+                        document.getElementById(selectedId).style.display = 'none';
+                        document.getElementById(dropTargetId).style.display = 'none';
+                        matchingCounter++;
+                    }
+
+                    if (matchingCounter === 5) {
+                        endMessage.style.display = 'block';
+                    }
+
+                    this.classList.remove('over');
+                    }
+
+                    function checkForMatch(selected, dropTarget) {
+                    switch (selected) {
+                        case 'e1':
+                        return dropTarget === 's1' ? true : false;
+
+                        case 'e2':
+                        return dropTarget === 's2' ? true : false;
+
+                        case 'e3':
+                        return dropTarget === 's3' ? true : false;
+
+                        case 'e4':
+                        return dropTarget === 's4' ? true : false;
+
+                        case 'e5':
+                        return dropTarget === 's5' ? true : false;
+
+                        default:
+                        return false;
+                    }
+                    }
+
+                    function checkForMatch2(selected, dropTarget) {
+                    switch (selected) {
+                        case 's1':
+                        return dropTarget === 'e1' ? true : false;
+
+                        case 's2':
+                        return dropTarget === 'e2' ? true : false;
+
+                        case 's3':
+                        return dropTarget === 'e3' ? true : false;
+
+                        case 's4':
+                        return dropTarget === 'e4' ? true : false;
+
+                        case 's5':
+                        return dropTarget === 'e5' ? true : false;
+
+                        default:
+                        return false;
+                    }
+                    }
+
+                    function playAgain() {
+                    matchingCounter = 0;
+                    endMessage.style.display = 'none';
+                    draggableListItems.forEach(item => {
+                        document.getElementById(item.id).style.display = 'block';
+                    })
+                    }
+
+                    function addEventListeners() {
+                    draggableListItems.forEach (item => {
+                        item.addEventListener('dragstart', dragStart);
+                        item.addEventListener('dragenter', dragEnter);
+                        item.addEventListener('drop', dragDrop);
+                        item.addEventListener('dragover', dragOver);
+                        item.addEventListener('dragleave', dragLeave);
+                    })
+                    }
+                </script>
+            </div>
+        </td>
+        </tr>
+        </table>
+        <br>
+        <a href="#forms">Volver al inicio</a>
         </div>
+ 
     </section>
     
 </body>

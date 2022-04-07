@@ -70,7 +70,11 @@ h1 {
 .container {
   max-width: 960px;
   margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
 }
+
 .draggable-list {
   padding: 5px;
 }
@@ -88,28 +92,13 @@ li {
 .over {
   background-color: #90a4ae;
 }
-
-
-table {
+.mitabla{
   max-width:640px;
   margin: auto;
   margin-bottom: 20px;
   /* border: 1px solid #b0bec5; */
 }
-
-th, td {
-  padding: 10px 10px;
-}
-
-td {
-  border: 1px solid #90a4ae;
-}
-
-tr:nth-child(even) {
-  background-color: #cfd8dc;
-}
-
-button {
+.botoncito{
   margin: auto;
   cursor: pointer;
   display: block;
@@ -120,16 +109,22 @@ button {
   background-color: #607d8b;
   color: #fff;
 }
-
 button:hover {
   background-color: #516a75;
 }
-
 #endMessage {
   display: none;
 }
-main {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 5px;
+#div1, #div2 {
+  float: left;
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
 }
+.pp{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(235, 105, 105);
+}
+
