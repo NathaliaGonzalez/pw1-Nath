@@ -373,7 +373,7 @@
         </div>
                 
         <div class="drag" id="drag">
-            <table align="center">
+            <table>
                 <tr>
                 <td>
             <div>
@@ -381,7 +381,7 @@
                 <p>Arrastre la imagen de un lado a otro entre los dos elementos div.</p>
                 
                 <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <img src="media/img_w3slogo.gif" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+                    <img src="media/img_w3slogo.gif" alt="logo" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
                 </div>
                 <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                 <script>
@@ -399,7 +399,7 @@
                         ev.target.appendChild(document.getElementById(data));
                     }
                     </script>
-            </div></tr></td>
+            </div></td></tr>
             <tr><td><h1>ARRASTRAR Y SOLTAR</h1>
             <p class="pp">Drag the English phrase over to the matching Spanish phrase</p>
             <p class="pp">Arrastra la frase en inglés hasta la frase en español correspondiente</p>
