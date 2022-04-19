@@ -594,15 +594,15 @@
                         } else {
                         sessionStorage.clickcount = 1;
                         }
-                        document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+                        document.getElementById("resultado").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
                     } else {
-                        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+                        document.getElementById("resultado").innerHTML = "Sorry, your browser does not support web storage...";
                     }
                     }
                 </script>
                 
                 <p><button onclick="clickCounter()" type="button">Click!</button></p>
-                <div id="result"></div>
+                <div id="resultado"></div>
                 <p>Haga clic en el botón para ver cómo aumenta el contador.</p>
                 <p>Cierre la pestaña (o ventana) del navegador, vuelva a intentarlo y el contador se reiniciará..</p>
         </div>
