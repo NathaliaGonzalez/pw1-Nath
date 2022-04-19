@@ -586,23 +586,23 @@
         </div>
         <div class="storage" id="storage"></div>
             <h1>Web Storage</h1>
-                <script>
-                    function clickCounter() {
-                    if (typeof(Storage) !== "undefined") {
-                        if (sessionStorage.clickcount) {
-                        sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
-                        } else {
-                        sessionStorage.clickcount = 1;
-                        }
-                        document.getElementById("resultado").innerHTML = "Ha hecho clic en el botón " + sessionStorage.clickcount + " veces en esta sesión.";
+            <script>
+                function clickCounter() {
+                  if (typeof(Storage) !== "undefined") {
+                    if (sessionStorage.clickcount) {
+                      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
                     } else {
-                        document.getElementById("resultado").innerHTML = "Sorry, your browser does not support web storage...";
+                      sessionStorage.clickcount = 1;
                     }
-                    }
+                    document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+                  } else {
+                    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+                  }
+                }
                 </script>
                 
                 <p><button onclick="clickCounter()" type="button">Click!</button></p>
-                <div id="resultado"></div>
+                <div id="result"></div>
                 <p>Haga clic en el botón para ver cómo aumenta el contador.</p>
                 <p>Cierre la pestaña (o ventana) del navegador, vuelva a intentarlo y el contador se reiniciará..</p>
         </div>
@@ -634,7 +634,9 @@
             }
             </script>
             <br>
+            <br>
             <a href="#forms">Volver al inicio</a>
+            <br>
             <br>
         </div>
         
