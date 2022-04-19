@@ -584,33 +584,31 @@
         </p>
         </div>
         <div class="workers" id="workers">
-            <p>Contar numeros: <output id="result"></output></p>
-            <button onclick="startWorker()">Empezar</button> 
-            <button onclick="stopWorker()">Parar</button>
+            <p>Count numbers: <output id="result"></output></p>
+            <button onclick="startWorker()">Start Worker</button>
+            <button onclick="stopWorker()">Stop Worker</button>
 
             <script>
             var w;
 
             function startWorker() {
-            if(typeof(Worker) !== "undefined") {
-                if(typeof(w) == "undefined") {
+            if (typeof(Worker) !== "undefined") {
+                if (typeof(w) == "undefined") {
                 w = new Worker("demo_workers.js");
                 }
                 w.onmessage = function(event) {
                 document.getElementById("result").innerHTML = event.data;
                 };
             } else {
-                document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+                document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
             }
             }
 
-            function stopWorker() { 
+            function stopWorker() {
             w.terminate();
             w = undefined;
             }
             </script>
-
-        
         </div>
         <div class="workers" id="SSE">
             <h1>Obtener actualizaciones de Servidores</h1>
