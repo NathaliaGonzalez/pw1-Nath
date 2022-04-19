@@ -20,7 +20,7 @@
             <a href="#drag">HTML Drag/Drop</a>
             <a href="#workers">HTML Web Workers</a>
             <a href="#storage">Web Storage</a>
-        </fieldset>
+            </fieldset>
         </div>
 
         <div class="mana">
@@ -586,19 +586,19 @@
         </div>
         <div class="storage" id="storage"></div>
             <h1>Web Storage</h1>
-            <script>
-                function clickCounter() {
-                  if (typeof(Storage) !== "undefined") {
-                    if (sessionStorage.clickcount) {
-                      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+                <script>
+                    function clickCounter() {
+                    if (typeof(Storage) !== "undefined") {
+                        if (sessionStorage.clickcount) {
+                        sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+                        } else {
+                        sessionStorage.clickcount = 1;
+                        }
+                        document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
                     } else {
-                      sessionStorage.clickcount = 1;
+                        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
                     }
-                    document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
-                  } else {
-                    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
-                  }
-                }
+                    }
                 </script>
                 
                 <p><button onclick="clickCounter()" type="button">Click!</button></p>
