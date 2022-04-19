@@ -18,6 +18,7 @@
             <a href="#media">HTML Media</a>
             <a href="#geolocalizacion">HTML Geolocalizacion</a>
             <a href="#drag">HTML Drag/Drop</a>
+            <a href="#workers">HTML Web Workers</a>
         </fieldset>
         </div>
 
@@ -582,8 +583,38 @@
             </a>
         </p>
         </div>
+        <div class="workers" id="workers">
+            <p>Contar numeros: <output id="result"></output></p>
+            <button onclick="startWorker()">Empezar</button> 
+            <button onclick="stopWorker()">Parar</button>
+
+            <script>
+            var w;
+
+            function startWorker() {
+            if(typeof(Worker) !== "undefined") {
+                if(typeof(w) == "undefined") {
+                w = new Worker("demo_workers.js");
+                }
+                w.onmessage = function(event) {
+                document.getElementById("result").innerHTML = event.data;
+                };
+            } else {
+                document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+            }
+            }
+
+            function stopWorker() { 
+            w.terminate();
+            w = undefined;
+            }
+            </script>
+
+        
+        </div>
         
     </section>
+   
     
 </body>
 </html>

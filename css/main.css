@@ -127,4 +127,11 @@ button:hover {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(235, 105, 105);
 }
+.workers{ grid-area: auto;
+  background-color: skyblue;
+  padding: 15pt;
+  background-image: url("../media/abc.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
